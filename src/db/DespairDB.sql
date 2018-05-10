@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `DespairDB`.`Inventaries` (
   `Quantity` INT NULL,
   `Price` DOUBLE NULL,
   `Tax` DOUBLE NULL,
-  `InventoryImage` LONGTEXT NULL,
+  `InventaryImage` LONGTEXT NULL,
   `CodeBar` VARCHAR(100) NULL,
   `BusinessID` INT NOT NULL,
   `CategoryID` INT NOT NULL,
