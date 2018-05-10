@@ -88,8 +88,8 @@ ENGINE = InnoDB;
 -- Table `DespairDB`.`Inventaries`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DespairDB`.`Inventaries` (
-  `InventoryID` INT NOT NULL AUTO_INCREMENT,
-  `InventoryDescription` VARCHAR(100) NULL,
+  `InventaryID` INT NOT NULL AUTO_INCREMENT,
+  `InventaryDescription` VARCHAR(100) NULL,
   `Quantity` INT NULL,
   `Price` DOUBLE NULL,
   `Tax` DOUBLE NULL,
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `DespairDB`.`Inventaries` (
   `CodeBar` VARCHAR(100) NULL,
   `BusinessID` INT NOT NULL,
   `CategoryID` INT NOT NULL,
-  PRIMARY KEY (`InventoryID`),
+  PRIMARY KEY (`InventaryID`),
   INDEX `fk_Inventaries_Business1_idx` (`BusinessID` ASC),
   INDEX `fk_Inventaries_Categories1_idx` (`CategoryID` ASC),
   CONSTRAINT `fk_Inventaries_Business1`
@@ -123,12 +123,12 @@ CREATE TABLE IF NOT EXISTS `DespairDB`.`BranchOfficesInventary` (
   `Price` DOUBLE NULL,
   `CodeBar` VARCHAR(100) NULL,
   `BusinessID` INT NOT NULL,
-  `InventoryID` INT NOT NULL,
+  `InventaryID` INT NOT NULL,
   `BranchOfficeID` INT NOT NULL,
   PRIMARY KEY (`BranchOfficeInventaryID`),
   INDEX `fk_BranchOfficesInventary_BranchOffices1_idx` (`BranchOfficeID` ASC),
   INDEX `fk_BranchOfficesInventary_Business1_idx` (`BusinessID` ASC),
-  INDEX `fk_BranchOfficesInventary_Inventaries1_idx` (`InventoryID` ASC),
+  INDEX `fk_BranchOfficesInventary_Inventaries1_idx` (`InventaryID` ASC),
   CONSTRAINT `fk_BranchOfficesInventary_BranchOffices1`
     FOREIGN KEY (`BranchOfficeID`)
     REFERENCES `DespairDB`.`BranchOffices` (`BranchOfficeID`)
@@ -140,8 +140,8 @@ CREATE TABLE IF NOT EXISTS `DespairDB`.`BranchOfficesInventary` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_BranchOfficesInventary_Inventaries1`
-    FOREIGN KEY (`InventoryID`)
-    REFERENCES `DespairDB`.`Inventaries` (`InventoryID`)
+    FOREIGN KEY (`InventaryID`)
+    REFERENCES `DespairDB`.`Inventaries` (`InventaryID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

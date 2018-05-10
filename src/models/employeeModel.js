@@ -35,7 +35,7 @@ employee.createEmployee = (employeeData, callback) => {
         if(error){
           throw error;
         } else {
-          callback(null, {msg: 'Created employee', insertID: data.insertID});
+          callback(null, {msg: 'Created employee'});
         }
       }
     )

@@ -35,7 +35,7 @@ inventary.createInventary = (inventaryData, callback) => {
         if(error){
           throw error;
         } else {
-          callback(null, {msg: 'Created inventary', insertID: data.insertID});
+          callback(null, {msg: 'Created inventary'});
         }
       }
     )

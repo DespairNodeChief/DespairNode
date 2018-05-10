@@ -35,7 +35,7 @@ business.createBusiness = (businessData, callback) => {
         if(error){
           throw error;
         } else {
-          callback(null, {msg: 'Created business', insertID: data.insertID});
+          callback(null, {msg: 'Created business'});
         }
       }
     )

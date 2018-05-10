@@ -35,7 +35,7 @@ BranchOffice.createBranchOffice = (BranchOfficeData, callback) => {
         if(error){
           throw error;
         } else {
-          callback(null, {msg: 'Created BranchOffice', insertID: data.insertID});
+          callback(null, {msg: 'Created BranchOffice'});
         }
       }
     )

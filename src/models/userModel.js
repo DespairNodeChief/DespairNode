@@ -35,7 +35,7 @@ user.createUser = (userData, callback) => {
         if(error){
           throw error;
         } else {
-          callback(null, {msg: 'Created user', insertID: data.insertID});
+          callback(null, {msg: 'Created user'});
         }
       }
     )
