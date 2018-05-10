@@ -13,7 +13,7 @@ function createProvider(req, res){
     ProviderAddress: req.body.ProviderAddress,
     ProviderPhone: req.body.ProviderPhone,
     ProviderEmail: req.body.ProviderEmail,
-    BusinessID: req.params.BusinessID
+    BusinessID: req.body.BusinessID
   }
 
   providerModel.createProvider(providerData, (error, data) => {

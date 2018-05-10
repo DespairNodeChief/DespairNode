@@ -20,12 +20,12 @@ function createEmployee(req, res){
     EmployeeImage: req.body.EmployeeImage,
     EmployeeUser: req.body.EmployeeUser,
     EmployeePassword: req.body.EmployeePassword,
-    BranchOfficeID: req.params.BranchOfficeID,
-    BusinessID: req.params.BusinessID
+    BranchOfficeID: req.body.BranchOfficeID,
+    BusinessID: req.body.BusinessID
   }
 
   employeeModel.createEmployee(employeeData, (error, data) => {
-    if(data && data.insertID){
+    if(data){
       res.status(200).json(data)
     } else {
       res.status(500).json({msg: 'Error'})
@@ -47,8 +47,8 @@ function updateEmployee(req, res){
     EmployeeImage: req.body.EmployeeImage,
     EmployeeUser: req.body.EmployeeUser,
     EmployeePassword: req.body.EmployeePassword,
-    BranchOfficeID: req.params.BranchOfficeID,
-    BusinessID: req.params.BusinessID
+    BranchOfficeID: req.body.BranchOfficeID,
+    BusinessID: req.body.BusinessID
   }
 
   employeeModel.updateEmployee(employeeData, (err, data) => {

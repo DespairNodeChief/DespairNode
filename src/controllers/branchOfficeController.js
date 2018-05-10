@@ -12,11 +12,11 @@ function createBranchOffice(req, res){
     BranchOfficeName: req.body.BranchOfficeName,
     BranchOfficeAddress: req.body.BranchOfficeAddress,
     BranchOfficePhone: req.body.BranchOfficePhone,
-    BusinessID: req.params.BusinessID
+    BusinessID: req.body.BusinessID
   }
 
   branchOfficeModel.createBranchOffice(branchOfficeData, (error, data) => {
-    if(data && data.insertID){
+    if(data){
       res.status(200).json(data)
     } else {
       res.status(500).json({msg: 'Error'})
@@ -30,7 +30,7 @@ function updateBranchOffice(req, res){
     BranchOfficeName: req.body.BranchOfficeName,
     BranchOfficeAddress: req.body.BranchOfficeAddress,
     BranchOfficePhone: req.body.BranchOfficePhone,
-    BusinessID: req.params.BusinessID
+    BusinessID: req.body.BusinessID
   }
 
   branchOfficeModel.updateBranchOffice(branchOfficeData, (err, data) => {

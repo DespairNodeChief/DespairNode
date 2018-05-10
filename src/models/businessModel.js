@@ -48,10 +48,10 @@ business.updateBusiness = (businessData, callback) => {
   if(connection){
     const updateData = `
       UPDATE Business SET
-      businessName = ${connection.escape(businessData.businessName)},
+      BusinessName = ${connection.escape(businessData.BusinessName)},
       BusinessCountry = ${connection.escape(businessData.BusinessCountry)},
       BusinessLogo = ${connection.escape(businessData.BusinessLogo)}
-      WHERE UserID = ${connection.escape(businessData.UserID)}
+      WHERE BusinessID = ${connection.escape(businessData.BusinessID)}
     `;
     connection.query(updateData, (error, data) => {
       if(error){

@@ -12,11 +12,11 @@ function createBusiness(req, res){
     BusinessName: req.body.BusinessName,
     BusinessCountry: req.body.BusinessCountry,
     BusinessLogo: req.body.BusinessLogo,
-    UserID: req.params.UserID
+    UserID: req.body.UserID
   }
 
   businessModel.createBusiness(businessData, (error, data) => {
-    if(data && data.insertID){
+    if(data){
       res.status(200).json(data)
     } else {
       res.status(500).json({msg: 'Error'})
@@ -30,7 +30,7 @@ function updateBusiness(req, res){
     BusinessName: req.body.BusinessName,
     BusinessCountry: req.body.BusinessCountry,
     BusinessLogo: req.body.BusinessLogo,
-    UserID: req.params.UserID
+    UserID: req.body.UserID
   }
 
   businessModel.updateBusiness(businessData, (err, data) => {

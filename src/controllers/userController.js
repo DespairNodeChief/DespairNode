@@ -6,6 +6,23 @@ function listUsers(req, res){
   })
 }
 
+function login(req, res){
+  const userData = {
+    UserID: req.params.UserID,
+    UserName: req.body.UserName,
+    UserNickName: req.body.UserNickName,
+    UserEmail: req.body.UserEmail,
+    UserPassword: req.body.UserPassword,
+  };
+  userModel.getUser(userData, (err, data) => {
+      if (data) {
+        res.status(200).json(data)
+      } else {
+        res.status(500).json({msg: "Error"})
+      }
+    });
+  }
+
 function createUser(req, res){
   const userData = {
     UserID: null,
@@ -16,7 +33,7 @@ function createUser(req, res){
   }
 
   userModel.createUser(userData, (error, data) => {
-    if(data && data.insertID){
+    if(data){
       res.status(200).json(data)
     } else {
       res.status(500).json({msg: 'Error'})
