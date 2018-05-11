@@ -48,20 +48,13 @@ invoice.updateInvoice = (invoiceData, callback) => {
   if(connection){
     const updateData = `
       UPDATE Invoices SET
-
-      InvoiceID = ${connection.escape(invoiceData.Description)},
-      InvoiceDate = ${connection.escape(invoiceData.Description)},
-      ClientName = ${connection.escape(invoiceData.Description)},
-      ClientLastName = ${connection.escape(invoiceData.Description)},
-      ClientNIT = ${connection.escape(invoiceData.Description)},
-      Total = ${connection.escape(invoiceData.Description)},
-      BusinessID = ${connection.escape(invoiceData.Description)},
-
-      Description = ${connection.escape(invoiceData.Description)},
+      InvoiceDate = ${connection.escape(invoiceData.InvoiceDate)},
+      ClientName = ${connection.escape(invoiceData.ClientName)},
+      ClientLastName = ${connection.escape(invoiceData.ClientLastName)},
+      ClientNIT = ${connection.escape(invoiceData.ClientNIT)},
       Total = ${connection.escape(invoiceData.Total)},
-      Date = ${connection.escape(invoiceData.Date)},
-      BusinessID = ${connection.escape(invoiceData.BusinessID)},
-      WHERE InvoiceID =  = ${connection.escape(invoiceData.InvoiceID)}
+      BusinessID = ${connection.escape(invoiceData.BusinessID)}
+      WHERE InvoiceID = ${connection.escape(invoiceData.InvoiceID)}
     `;
     connection.query(updateData, (error, data) => {
       if(error){
@@ -75,7 +68,7 @@ invoice.updateInvoice = (invoiceData, callback) => {
   }
 };
 
-invoice.deleteinvoice = (InvoiceID, callback) => {
+invoice.deleteInvoice = (InvoiceID, callback) => {
   if(connection){
     const deleteData = `
       DELETE FROM Invoices WHERE InvoiceID = ${connection.escape(InvoiceID)}
