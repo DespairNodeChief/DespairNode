@@ -191,10 +191,8 @@ CREATE TABLE IF NOT EXISTS `DespairDB`.`Invoices` (
   `ClientNIT` VARCHAR(45) NULL,
   `Total` DOUBLE NULL,
   `BusinessID` INT NOT NULL,
-
   PRIMARY KEY (`InvoiceID`),
   INDEX `fk_Invoices_Business1_idx` (`BusinessID` ASC),
-
   CONSTRAINT `fk_Invoices_Business1`
     FOREIGN KEY (`BusinessID`)
     REFERENCES `DespairDB`.`Business` (`BusinessID`)
