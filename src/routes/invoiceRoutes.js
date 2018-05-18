@@ -8,5 +8,5 @@ module.exports = function (app){
   app.post('/invoice/createInvoice', ensureToken.ensureToken, invoiceController.createInvoice);
   app.put('/invoice/updateInvoice/:InvoiceID', ensureToken.ensureToken, invoiceController.updateInvoice);
   app.delete('/invoice/deleteInvoice/:InvoiceID', ensureToken.ensureToken, invoiceController.deleteInvoice);
-
+  app.get('/invoice/reportInvoice', ensureToken.ensureToken, invoiceController.reportInvoice);
 }
